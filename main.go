@@ -3,8 +3,13 @@ package main
 import (
 	"context"
 	"fmt"
+	"log"
+	"os"
+	"os/signal"
+	"syscall"
 	"time"
 
+	"github.com/multiformats/go-multiaddr"
 	"github.com/waku-org/go-waku/waku/v2/protocol/pb"
 	"github.com/waku-org/waku-go-bindings/waku"
 	"github.com/waku-org/waku-go-bindings/waku/common"
@@ -31,8 +36,8 @@ func main() {
 		Relay:           true,
 		LogLevel:        "DEBUG",
 		Discv5Discovery: false,
-		ClusterID:       16,
-		Shards:          []uint16{64},
+		ClusterID:       42,
+		Shards:          []uint16{0},
 		Discv5UdpPort:   9020,
 		TcpPort:         60020,
 	}
@@ -55,8 +60,8 @@ func main() {
 		Relay:           true,
 		LogLevel:        "DEBUG",
 		Discv5Discovery: false,
-		ClusterID:       16,
-		Shards:          []uint16{64},
+		ClusterID:       42,
+		Shards:          []uint16{0},
 		Discv5UdpPort:   9021,
 		TcpPort:         60021,
 	}
@@ -120,6 +125,16 @@ func main() {
 	}
 	fmt.Printf("Receiver final peer count: %d\n", receiverPeerCount)
 
+	publicNode, err := multiaddr.NewMultiaddr("/dns4/waku-test.bloxy.one/tcp/30304/p2p/16Uiu2HAmSZbDB7CusdRhgkD81VssRjQV5ZH13FbzCGcdnbbh6VwZ")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	err = receiverNode.Connect(ctx, publicNode)
+	if err != nil {
+		log.Fatal(err)
+	}
+
 	go func() {
 		for envelope := range receiverNode.MsgChan {
 			if envelope.Message().ContentTopic == ContentTopic {
@@ -135,9 +150,12 @@ func main() {
 			Payload:      []byte(payload),
 			ContentTopic: ContentTopic,
 		}
-		dialerNode.RelayPublish(ctx, msg, "/waku/2/rs/16/64")
-		time.Sleep(1 * time.Second)
+		dialerNode.RelayPublish(ctx, msg, "/waku/2/rs/42/0")
 	}
 
-	time.Sleep(3 * time.Second)
+	fmt.Println(receiverMultiaddr)
+
+	quitChannel := make(chan os.Signal, 1)
+	signal.Notify(quitChannel, syscall.SIGINT, syscall.SIGTERM)
+	<-quitChannel
 }

@@ -3,7 +3,9 @@ module example-waku-go-bindings
 go 1.21.13
 
 require (
-	github.com/waku-org/waku-go-bindings v0.0.0-20250309101421-d838ad14923d
+	github.com/multiformats/go-multiaddr v0.13.0
+	github.com/waku-org/go-waku v0.8.1-0.20241028194639-dd82c24e0057
+	github.com/waku-org/waku-go-bindings v0.0.0-20250311183206-c0862f81ffbe
 	go.uber.org/zap v1.27.0
 )
 
@@ -26,7 +28,6 @@ require (
 	github.com/mr-tron/base58 v1.2.0 // indirect
 	github.com/multiformats/go-base32 v0.1.0 // indirect
 	github.com/multiformats/go-base36 v0.2.0 // indirect
-	github.com/multiformats/go-multiaddr v0.13.0 // indirect
 	github.com/multiformats/go-multibase v0.2.0 // indirect
 	github.com/multiformats/go-multicodec v0.9.0 // indirect
 	github.com/multiformats/go-multihash v0.2.3 // indirect
@@ -35,7 +36,6 @@ require (
 	github.com/sirupsen/logrus v1.2.0 // indirect
 	github.com/spaolacci/murmur3 v1.1.0 // indirect
 	github.com/syndtr/goleveldb v1.0.1-0.20220614013038-64ee5596c38a // indirect
-	github.com/waku-org/go-waku v0.8.1-0.20241028194639-dd82c24e0057 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	golang.org/x/crypto v0.26.0 // indirect
 	golang.org/x/exp v0.0.0-20240808152545-0cdaa3abc0fa // indirect

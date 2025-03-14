@@ -156,8 +156,8 @@ github.com/waku-org/go-discover v0.0.0-20240506173252-4912704efdc5 h1:4K3IS97Jry
 github.com/waku-org/go-discover v0.0.0-20240506173252-4912704efdc5/go.mod h1:eBHgM6T4EG0RZzxpxKy+rGz/6Dw2Nd8DWxS0lm9ESDw=
 github.com/waku-org/go-waku v0.8.1-0.20241028194639-dd82c24e0057 h1:C/UCg3Z4avOxvZEvY0JzYmeAoqZUBnSE6PK/SaxfEAM=
 github.com/waku-org/go-waku v0.8.1-0.20241028194639-dd82c24e0057/go.mod h1:1BRnyg2mQ2aBNLTBaPq6vEvobzywGykPOhGQFbHGf74=
-github.com/waku-org/waku-go-bindings v0.0.0-20250309101421-d838ad14923d h1:1j9ERTfLo7Km+dVpwbwkpNuwRN+cTwHvupiupJZUWow=
-github.com/waku-org/waku-go-bindings v0.0.0-20250309101421-d838ad14923d/go.mod h1:ZumFjFmErDtVBY5t1HH7pD9cQeeepAmlLA6MD/MjHx4=
+github.com/waku-org/waku-go-bindings v0.0.0-20250311183206-c0862f81ffbe h1:gKbULoNT9gO7XYHNsOA+ZxetJV3Myue3R/2PPzJ8kSQ=
+github.com/waku-org/waku-go-bindings v0.0.0-20250311183206-c0862f81ffbe/go.mod h1:ZumFjFmErDtVBY5t1HH7pD9cQeeepAmlLA6MD/MjHx4=
 github.com/yuin/goldmark v1.2.1/go.mod h1:3hX8gzYuyVAZsxl0MRgGTJEmQBFcNTphYh9decYSb74=
 github.com/yuin/goldmark v1.3.5/go.mod h1:mwnBkeHKe2W/ZEtQ+71ViKU8L12m81fl3OWwC1Zlc8k=
 go.uber.org/atomic v1.7.0/go.mod h1:fEN4uk6kAWBTFdckzkM89CLk9XfWZrxpCo0nPH17wJc=
